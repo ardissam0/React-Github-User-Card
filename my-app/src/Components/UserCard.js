@@ -8,7 +8,7 @@ function UserCard(props) {
         <div className='UserCards'>
             <Card key={props.id}>
                 <div>
-                    <CardImg src={props.avatar_url} alt={props.id}></CardImg>
+                    <CardImg style={{width: '30%', borderRadius: '200px'}} src={props.avatar_url} alt={props.id}></CardImg>
                     <CardText>{props.login}</CardText>
                     <CardText>{props.location}</CardText>
                 </div>

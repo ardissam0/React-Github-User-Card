@@ -47,8 +47,7 @@ class GithubUser extends React.Component {
                         html_url={this.state.user.html_url}
                         />
                     }
-                </div>
-                <div className='followers-cards'>
+                    
                     {this.state.followers.map(follower => (
                         <UserCard
                         login={follower.login}
