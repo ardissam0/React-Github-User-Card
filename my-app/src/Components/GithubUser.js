@@ -14,7 +14,7 @@ class GithubUser extends React.Component {
 
     componentDidMount() {
         axios
-        .get('https://api.github.com/ardissam0')
+        .get('https://api.github.com/users/ardissam0')
         .then(response => {
             console.log(response.data.followers_url);
             this.setState({
@@ -23,7 +23,8 @@ class GithubUser extends React.Component {
         })
         .catch(error => console.log(error));
 
-        axios.get('https://api.github.com/ardissam0/followers')
+        axios
+        .get('https://api.github.com/users/ardissam0/followers')
         .then(response => {
             console.log(response.data);
             this.setState({
@@ -48,11 +49,11 @@ class GithubUser extends React.Component {
                     }
                 </div>
                 <div className='followers-cards'>
-                    {this.state.followers/Map(follower => (
+                    {this.state.followers.map(follower => (
                         <UserCard
                         login={follower.login}
                         id={follower.id}
-                        avatar_url={follower.avatat_url}
+                        avatar_url={follower.avatar_url}
                         location={follower.location}
                         html_url={follower.html_url}
                         />
